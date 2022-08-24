@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.fondo-header {
+  background-color: #000000;
+}
+
+.link-header {
+  color: #ffffff;
+
+}
+
+.link-header:hover {
+      color: antiquewhite;
+    }
+
+/* 01:03:27 */
