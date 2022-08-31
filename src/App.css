@@ -3,9 +3,19 @@
   padding: 0;
 }
 
+div ul {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+div ul a {
+  text-decoration: none;
+}
+
 .fondo-header {
   background-color: #000000;
 }
+
 .fondo-menuppal {
   background-color: #ffebcd;
 }

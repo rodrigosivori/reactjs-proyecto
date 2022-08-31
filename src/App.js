@@ -6,7 +6,7 @@ import NavBar from './componentes/NavBar';
 
 
 function App() {
-  const lista = ["Bowl de Frutas", "Crossaint Vegetales", "Scon de Frutos Rojos"]
+  const lista = ["Bowl de Frutas", "Crossaint Vegetales", "Scon de Frutos Rojos", "Pan de queso"]
   const items = lista.map(items => (
     <ItemListContainer valor={items} />
   ));
