@@ -2,7 +2,7 @@ import './App.css';
 import Footer from './componentes/Footer';
 import ItemListContainer from './componentes/ItemListContainer';
 import NavBar from './componentes/NavBar';
-//import Principal from './componentes/Principal';
+
 
 
 function App() {
@@ -20,7 +20,6 @@ function App() {
       <ul>
         {items}
       </ul>
-        {/* <Principal /> */}
       </div>
       <Footer />
   
