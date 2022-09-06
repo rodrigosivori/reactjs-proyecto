@@ -2,6 +2,7 @@ import './App.css';
 import Footer from './componentes/Footer';
 import ItemListContainer from './componentes/ItemListContainer';
 import NavBar from './componentes/NavBar';
+//import ItemCount from './componentes/ItemCount';
 
 
 
@@ -16,10 +17,10 @@ function App() {
       <div className='fondo-header p-2'> 
         <NavBar />
       </div>
-      <div className='fondo-menuppal pt-4 pb-3'>
-      <ul>
-        {items}
-      </ul>
+      <div className='fondo-menuppal p-5'>
+        <ul>
+          {items}
+        </ul>
       </div>
       <Footer />
   
