@@ -7,20 +7,15 @@ import NavBar from './componentes/NavBar';
 
 
 function App() {
-  const lista = ["Bowl de Frutas", "Crossaint Vegetales", "Scon de Frutos Rojos", "Pan de queso"]
-  const items = lista.map(items => (
-    <ItemListContainer valor={items} />
-  ));
-
+  
   return (
     <div className='container-fluid p-0'>
       <div className='fondo-header p-2'> 
         <NavBar />
       </div>
       <div className='fondo-menuppal p-5'>
-        <ul>
-          {items}
-        </ul>
+      <ItemListContainer />
+     {/*  <ItemCount stock={5} initial={1} onAdd={0} /> */}
       </div>
       <Footer />
   
