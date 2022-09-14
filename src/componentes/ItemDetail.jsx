@@ -6,7 +6,7 @@ const ItemDetail = ({item}) =>{
     return(
         <div className='row justify-content-center col-md-5 py-3'>
             <div className='card'>
-                <img src={item.foto} className='card-img-top' alt={item.producto} />
+                <img src={item.foto} className='card-img-top pt-2' alt={item.producto} />
                 <div className='card-body'>
                     <h5 className='card-title text-center'><b>{item.producto}</b></h5>
                     <p className='card-text text-center'>${item.precio}</p>
