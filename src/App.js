@@ -1,5 +1,6 @@
 import './App.css';
 import Footer from './componentes/Footer';
+import ItemDetailContainer from './componentes/ItemDetailContainer';
 import ItemListContainer from './componentes/ItemListContainer';
 import NavBar from './componentes/NavBar';
 //import ItemCount from './componentes/ItemCount';
@@ -16,6 +17,7 @@ function App() {
       <div className='fondo-menuppal p-5'>
       <ItemListContainer />
      {/*  <ItemCount stock={5} initial={1} onAdd={0} /> */}
+      <ItemDetailContainer />
       </div>
       <Footer />
   
