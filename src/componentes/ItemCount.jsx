@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 
 
+
 const ItemCount = ({initial, stock, onAdd}) => {
 const [cantidad, setCantidad] = useState(initial);
 const [itemStock, setItemStock] = useState(stock);
@@ -25,11 +26,11 @@ const agregarProductos = () => {
 
     return(
         <div className="container">
-            <button className="btn btn-primary" disabled={cantidad <= 1} onClick={decrementarCantidad}>-</button>
-            <input type='text' className="text-center col-1" value={cantidad} />
-            <button className="btn btn-primary" disabled={cantidad >= itemStock} onClick={incrementarCantidad}>+</button> 
+            <button className="btn btn-primary col-1" disabled={cantidad <= 1} onClick={decrementarCantidad}>-</button>
+            <input type='text' className="text-center col-2" value={cantidad} />
+            <button className="btn btn-primary col-1" disabled={cantidad >= itemStock} onClick={incrementarCantidad}>+</button> 
             <div>
-                <button className="btn btn-primary pb-2" disabled={stock <= 0} onClick={() => {agregarProductos()}}>Agregar</button>
+                <button className="btn btn-primary pb-2 mt-2" disabled={stock <= 0} onClick={() => {agregarProductos()}}>Agregar</button>
                 <p>En stock: {itemStock}</p>
                 <p>Agregaste: {itemAdd} de productos</p>
             </div>
