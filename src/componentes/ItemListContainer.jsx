@@ -1,30 +1,55 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { productos } from "./Productos";
 
 
 const ItemListContainer = () => {
+
+   
+    
     
     const [items, setItems] = useState([]);
+    
+    const {categoria} = useParams()
+    console.log(categoria);
 
     useEffect(() => {
-        
-        const getProductos = new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(productos);
-            }, 500);
-        });
 
-        getProductos.then((respuesta) => {
-            setItems(respuesta);
-        });
-    }, []);
+        if(!categoria){
+            
+            const getProductos = new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(productos);
+                }, 500);
+            });
+            
+            getProductos.then((respuesta) => {
+                setItems(respuesta);
+            });
+        }else{
+            const getProductos = new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(productos);
+                }, 500);
+            });
+
+            getProductos.then((respuesta) => {
+                setItems(respuesta.filter(cat => cat.categoria === categoria));
+            });
+        }
+        }, [categoria]);
+        
+
+   
 
     return (
-        <div className="container">
-            <ItemList items={items} />
+        <div className="fondo-menuppal p-5">
+            <div className="container">
+                <ItemList items={items} />
+            </div>
         </div>
     )
 }

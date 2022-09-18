@@ -1,27 +1,27 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './componentes/Footer';
 import ItemDetailContainer from './componentes/ItemDetailContainer';
-import ItemListContainer from './componentes/ItemListContainer';
 import NavBar from './componentes/NavBar';
-//import ItemCount from './componentes/ItemCount';
+import ItemListContainer from './componentes/ItemListContainer';
 
 
 
 function App() {
   
   return (
-    <div className='container-fluid p-0'>
-      <div className='fondo-header p-2'> 
+  <div className='container-fluid p-0'>
+    <BrowserRouter >
         <NavBar />
-      </div>
-      <div className='fondo-menuppal p-5'>
-      <ItemListContainer />
-     {/*  <ItemCount stock={5} initial={1} onAdd={0} /> */}
-      <ItemDetailContainer />
-      </div>
-      <Footer />
-  
-    </div>
+
+      <Routes>
+        
+      <Route exact path='/'  element={<ItemListContainer /> } />
+      <Route exact path='/category/:categoria'  element={<ItemListContainer /> } />
+      <Route exact path='/item/:id' element={ <ItemDetailContainer/> } />
+     
+      </Routes>
+    </BrowserRouter>
+  </div>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import { productos } from './Productos';
  
@@ -9,25 +10,31 @@ const ItemDetailContainer = () => {
 
     const[item, setItem] = useState({})
 
-    useEffect( () => {
-        const getProducto = () => 
-            new Promise ((resolve) => {
-                const producto = productos.find((productos) => productos.id === 3);
-                setTimeout (() => {
-                    resolve(producto);
-                },2000)
-            });
-
-            getProducto()
-                .then((detalle) => {
-                    setItem(detalle);
-                });
-    }, []);
-
+    const {id} = useParams()
+    
+    useEffect(()=> {
+    
+    const getItemById = (id) => {
+        return new Promise (resolve => {
+            setTimeout(() => {
+                resolve(productos.find(productos => productos.id === id))
+            }, 500)
+            console.log(id);
+        })
+    };
+    
+        getItemById(id)
+            .then(response => {
+                setItem(response)
+        });
+    },);
+ 
     return (
-        <div className='container'>
-            <div className='row justify-content-center'>
-                <ItemDetail item={item} />
+        <div className="fondo-menuppal p-5">
+            <div className='container'>
+                <div className='row justify-content-center'>
+                    <ItemDetail item={item} />
+                </div>
             </div>
         </div>
     );
