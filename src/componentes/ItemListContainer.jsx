@@ -14,7 +14,6 @@ const ItemListContainer = () => {
     const [items, setItems] = useState([]);
     
     const {categoria} = useParams()
-    console.log(categoria);
 
     useEffect(() => {
 
@@ -24,6 +23,7 @@ const ItemListContainer = () => {
                 setTimeout(() => {
                     resolve(productos);
                 }, 500);
+                console.log(categoria);
             });
             
             getProductos.then((respuesta) => {

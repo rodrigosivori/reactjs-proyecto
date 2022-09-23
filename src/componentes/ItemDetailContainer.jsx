@@ -19,7 +19,6 @@ const ItemDetailContainer = () => {
             setTimeout(() => {
                 resolve(productos.find(productos => productos.id === id))
             }, 500)
-            console.log(id);
         })
     };
     
@@ -33,7 +32,7 @@ const ItemDetailContainer = () => {
         <div className="fondo-menuppal p-5">
             <div className='container'>
                 <div className='row justify-content-center'>
-                    <ItemDetail item={item} />
+                    <ItemDetail item={item}/>
                 </div>
             </div>
         </div>
