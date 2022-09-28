@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 
 
@@ -25,6 +25,9 @@ const agregarProductos = () => {
     }       
 }
 
+useEffect(() => { 
+    setItemStock(stock);
+}, [stock]);
 
     return(
         <div className="container">
