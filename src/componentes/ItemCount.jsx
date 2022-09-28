@@ -33,11 +33,11 @@ useEffect(() => {
         <div className="container">
             <div className="text-center">
                 <button className="btn btn-primary col-1" disabled={cantidad <= 1} onClick={decrementarCantidad}>-</button>
-                <input type='button' className="btn text-center col-md-2" disable value={cantidad} />
+                <input type='button' className="btn text-center col-md-2" value={cantidad} />
                 <button className="btn btn-primary col-1" disabled={cantidad >= itemStock} onClick={incrementarCantidad}>+</button> 
             </div>
             <div className="text-center pb-3">
-                <button className="btn btn-primary pb-2 mt-2" disabled={stock <= 0} onClick={() => {agregarProductos()}}>Agregar</button>
+                <button className="btn btn-primary pb-2 mt-2" disabled={stock <= 0} onClick={agregarProductos}>Agregar</button>
             </div>
             <p className="text-center">En stock: {itemStock}</p>
             <p className="text-center">Agregaste {itemAdd} de productos</p>

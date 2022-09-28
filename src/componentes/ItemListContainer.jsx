@@ -23,7 +23,6 @@ const ItemListContainer = () => {
                 setTimeout(() => {
                     resolve(productos);
                 }, 500);
-                console.log(categoria);
             });
             
             getProductos.then((respuesta) => {

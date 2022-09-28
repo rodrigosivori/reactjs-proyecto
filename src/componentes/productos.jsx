@@ -53,7 +53,7 @@ export const productos = [
 },
     {
         'id': '6', 
-        'producto':'Brunch para dos personas', 
+        'producto':'Brunch para dos', 
         'precio':2475, 
         "stock":4, 
         'categoria':'combos', 
