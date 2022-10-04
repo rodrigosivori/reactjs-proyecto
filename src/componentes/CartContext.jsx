@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react';
-// import { productos } from './Productos';
 
 
 export const CartContext = createContext();
@@ -27,7 +26,7 @@ const CartProvider = (items) => {
             if (producto.id === itemInCart.id) {
                 const productUpdated = {
                     ...itemInCart,
-                    cantidad: producto.cantidad,
+                    cantidad: itemInCart.cantidad + producto.cantidad
                 };
                 return productUpdated;
             } else {

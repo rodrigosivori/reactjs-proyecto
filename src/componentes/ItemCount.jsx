@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from "react";
-import { Link } from "react-router-dom";
-
 
 
 const ItemCount = ({initial, stock, onAdd}) => {
@@ -41,11 +39,7 @@ useEffect(() => {
             </div>
             <p className="text-center">En stock: {itemStock}</p>
             <p className="text-center">Agregaste {itemAdd} de productos</p>
-            <div className='row justify-content-center'>
-                <button className='btn btn-primary col-5 mb-3'>
-                    <Link to='/cart' className="checkOut nav-link">IR AL CARRITO </Link>
-                </button>
-            </div>
+           
         </div>
 
     );
