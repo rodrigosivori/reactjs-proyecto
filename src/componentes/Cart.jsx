@@ -23,6 +23,9 @@ const Cart = () => {
         <div className='row justify-content-center' >
             <button className='col-2 btn btn-primary ' onClick={clearAll}>Vaciar carrito</button>
         </div>
+        <div className='row justify-content-center pt-2' >
+            <button className='col-2 btn btn-primary '>Finalizar Compra</button>
+        </div>
     </div>
     );
 };
