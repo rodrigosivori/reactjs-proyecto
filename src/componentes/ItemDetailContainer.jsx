@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
-import { productos } from './Productos';
+import { productos } from './productos';
  
 
 const ItemDetailContainer = () => {
