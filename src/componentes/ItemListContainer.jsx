@@ -1,48 +1,48 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 import ItemList from "./ItemList";
-import { productos } from "./productos";
 
 
 const ItemListContainer = () => {
-
-   
-    
     
     const [items, setItems] = useState([]);
     
-    const {categoria} = useParams()
+    const {id, categoria} = useParams()
 
     useEffect(() => {
 
-        if(!categoria){
-            
-            const getProductos = new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve(productos);
-                }, 500);
-            });
-            
-            getProductos.then((respuesta) => {
-                setItems(respuesta);
-            });
-        }else{
-            const getProductos = new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve(productos);
-                }, 500);
-            });
+    if (!categoria){
 
-            getProductos.then((respuesta) => {
-                setItems(respuesta.filter(cat => cat.categoria === categoria));
-            });
-        }
-        }, [categoria]);
+        const db = getFirestore();
         
-
+        const itemsCollection = collection(db, "productos");
+        
+        const queryItems = id ? query(itemsCollection, where("id", "==", id)) : itemsCollection;
+        
+        getDocs(queryItems).then((items) => {
+            setItems(items.docs.map(item => ({id:item.id, ...item.data()})));
+        });
    
+   
+    } else {
+
+        const db = getFirestore();
+        
+        const itemsCollection = collection(db, "productos");
+        
+        const queryItems = categoria ? query(itemsCollection, where("categoria", "==", categoria)) : itemsCollection;
+        
+        getDocs(queryItems).then((items) => {
+            setItems(items.docs.map(item => ({id:item.id, ...item.data()})));
+        });
+   
+    };
+
+
+}, [categoria, id]);
+
+        
 
     return (
         <div className="fondo-menuppal p-5">

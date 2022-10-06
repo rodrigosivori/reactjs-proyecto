@@ -1,9 +1,8 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect,  useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
-import { productos } from './productos';
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+
  
 
 const ItemDetailContainer = () => {
@@ -14,20 +13,20 @@ const ItemDetailContainer = () => {
     
     useEffect(()=> {
     
-    const getItemById = (id) => {
-        return new Promise (resolve => {
-            setTimeout(() => {
-                resolve(productos.find(productos => productos.id === id))
-            }, 500)
-        })
-    };
-    
-        getItemById(id)
-            .then(response => {
-                setItem(response)
+        const db = getFirestore();
+      
+        const res = doc(db, "productos", id);
+      
+        getDoc(res).then((item) => {
+      
+            if (item.exists()) {
+                setItem({id:item.id, ...item.data()});
+                
+            }            
         });
-    },);
- 
+    }, [id]);
+
+    
     return (
         <div className="fondo-menuppal p-5">
             <div className='container'>
