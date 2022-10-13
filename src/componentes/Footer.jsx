@@ -2,10 +2,9 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <div className="container fondo-header">
-            <div className="justify-center">
-                <p>ACA VA EL LOGO</p>
-            </div>
+        <div className='fondo-header p-5' >
+
+            
         </div>        
     )
 } 
