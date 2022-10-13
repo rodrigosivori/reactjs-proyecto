@@ -14,7 +14,7 @@ const Cart = () => {
                 <h2>CARRITO</h2>
                 {cart.map((item) => (
                     <div className='card col-md-2 p-0'>
-                        <img src={item.foto} className='card-img-top pb-2' alt={item.producto} />
+                        <img src={'/images/' + item.foto} className='card-img-top pb-2' alt={item.producto} />
                         <h4 className='card-title text-center'><b>{item.producto}</b></h4>
                         <h5 className='card-text text-center'>${item.precio}</h5>
                         <p className='text-center'>Cantidad: {item.cantidad}</p>
