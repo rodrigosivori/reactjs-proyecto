@@ -35,11 +35,15 @@ const Cart = () => {
         return (
 
         <div className='fondo-menuppal p-5'>
-            <h3>NO HAY PRODUCTOS SELECCIONADOS</h3>
-            <h5>Por favor vuelva al listado y seleccione al menos 1 producto.</h5>
-            <button className='btn btn-primary col-2 mb-3'>
-                        <Link to='/' className="checkOut nav-link">Volver al listado</Link>
-            </button>
+            <div className="col-md-12 text-center p-5">
+                <div className="alert alert-danger text-center" role="alert">
+                    <h3>NO HAY PRODUCTOS SELECCIONADOS</h3>
+                    <h5>Por favor vuelva al listado y seleccione al menos 1 producto.</h5>
+                </div>
+                <button className='btn btn-primary col-2 mb-3'>
+                            <Link to='/' className="checkOut nav-link">Volver al listado</Link>
+                </button>
+            </div>
         </div>
     
     ) 
