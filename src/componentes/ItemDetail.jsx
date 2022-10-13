@@ -15,7 +15,7 @@ const ItemDetail = ({item}) =>{
     const onAdd = (cantidad) => {
         setCantidad(cantidad);
         addItem(item, cantidad);
-        console.log(cantidad);
+        //console.log(cantidad);
         
     }
 

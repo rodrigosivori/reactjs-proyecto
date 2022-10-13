@@ -55,10 +55,18 @@ const CartProvider = (items) => {
         const productosFiltrados = cart.filter((prod) => prod.id !== id);
         setCart(productosFiltrados);
     };
+    
+    const cartTotal = () => {
+        return cart.reduce((total, item) => total+=item.cantidad, 0);
+    };
+
+    const cartSuma = () => {
+        return cart.reduce((total, item) => total+=item.cantidad*item.precio, 0);
+    }
 
 
     return (
-        <CartContext.Provider value={{ cart, isInCart, addItem, clearAll, totalUnidades, clearItem }}>
+        <CartContext.Provider value={{ cart, isInCart, addItem, clearAll, totalUnidades, clearItem, cartTotal, cartSuma }}>
             {items.children}
         </CartContext.Provider>
     );
