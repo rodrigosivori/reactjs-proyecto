@@ -18,7 +18,7 @@ const Cart = () => {
                         <h4 className='card-title text-center'><b>{item.producto}</b></h4>
                         <h5 className='card-text text-center'>${item.precio}</h5>
                         <p className='text-center'>Cantidad: {item.cantidad}</p>
-                        <button className='btn btn-primary mb-2' onClick={() => clearItem(item.id)}>Eliminar Item</button>
+                        <button className='btn btn-primary mb-3' onClick={() => clearItem(item.id)}>Eliminar Item</button>
                     </div>
                     ))}
             </div>
@@ -38,7 +38,7 @@ const Cart = () => {
             <div className="col-md-12 text-center p-5">
                 <div className="alert alert-danger text-center" role="alert">
                     <h3>NO HAY PRODUCTOS SELECCIONADOS</h3>
-                    <h5>Por favor vuelva al listado y seleccione al menos 1 producto.</h5>
+                    <h6>Por favor vuelva al listado y seleccione al menos 1 producto.</h6>
                 </div>
                 <button className='btn btn-primary col-2 mb-3'>
                             <Link to='/' className="checkOut nav-link">Volver al listado</Link>

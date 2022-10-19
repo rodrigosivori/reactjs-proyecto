@@ -72,7 +72,7 @@ const Checkout = () => {
                         </table>
                     </div>
                 </div>
-                : orderId !== "" ? <Success id={orderId} /> : <div className="alert alert-danger text-center" role="alert">El carrito esta vacio!!</div>}
+                : orderId !== "" ? <Success id={orderId} /> : <div className="alert alert-danger text-center" role="alert"><h3>El carrito esta vacio! :(</h3></div>}
             </div>
         </div>
 
